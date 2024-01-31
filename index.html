@@ -10,10 +10,10 @@
     <section>
         ><h1>Cyril Klutse</h1>
            <p></p>
-           <img>
+     <img src="img/profile.png" alt="Profile Picture">
+
     </section>
 
-    <!--Personal Information Section-->
     <section>
         <h2>Personal Information </h2>
         <p>Date of Birth : 11/04/1995</p>
@@ -21,28 +21,24 @@
 
         <h3> Hobbies and Interests</h3>
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Playing Soccer</li>
+            <li>Watching Movies</li>
+            <li>Reading books</li>
         </ul>
 
         
     </section>
 
-     <!--Educational Background-->
 
      <section>
         <h2>Educational Background</h2>
         <ol>
-            <li>School or Degree 1</li>
-            <li>School or Degree 2</li>
-            <li>School or Degree 3</li>
-            <!-- Add more schools or degrees as needed -->
+            <li>Bishop Herman College, Ghana, West Africa</li>
+            <li>Raritan Valley Community College, Raritan, NJ</li>
+            <li>Rowan University , Glassboro, NJ</li>
         </ol>
-        <p>Academic achievements can be listed here.</p>
     </section>
 
-      <!--Skills and Experience-->
       <section>
         <h2>Skills and Experience</h2>
         <table border = '1'>
@@ -50,10 +46,17 @@
             <tr>
                 <th>Skill</th>
                 <th>Profiency Level</th>
+                <th>Expertise</th>
             </tr>
             <tr>
                 <td>Programming Language</td>
+                <td>Java, C++</td>
                 <td>Beginner</td>
+                <tr>
+                    <td>Microsoft Office</td>
+                    <td>Excel,Word, Publish</td>
+                    <td>Beginner</td>
+                </tr>
                 
             </tr>
         </table>
@@ -63,22 +66,15 @@
       <section>
         <h2>Contact Me</h2>
         
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <div class="profile-section">
             
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <!-- Optional fields -->
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone">
-            
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject">
-            
+            <form action="submit-to-some-server.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required><br>
+                <input type="email" name="email" placeholder="Your Email" required><br>
+                <textarea name="message" placeholder="Your Message"></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
             
             </form>
       </section>
@@ -86,12 +82,10 @@
        <!-- Contact Information -->
     <section>
         <h2>Contact Information</h2>
-        <p>Email: your.email@example.com</p>
-        <p>Phone: Optional</p>
+        <p>Email: cyrilklutse@gmail.com</p>
+        <p>Phone: +1(908)-963-3628</p>
         <p>Social Media: 
-            <a href="your-linkedin-profile-url">LinkedIn</a>, 
-            <a href="your-twitter-profile-url">Twitter</a>, 
-            <a href="your-personal-website-url">Personal Website</a>
+            <a href="https://www.linkedin.com/in/cyril-klutse-991b76113/">LinkedIn</a>, 
         </p>
     </section>
 
