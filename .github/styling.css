@@ -44,5 +44,18 @@ p,li {
 .introduction-section p {
     font-style: italic;
     font-size: 16px;
-    
+
+}
+
+.profile-picture {
+
+    width: 150px;
+    border: 3px solid #ff7f50;
+
+}
+
+.personal-info-section ul li::before {
+    content: "✓";
+    color: #ff7f50;
+    margin-right: 5px;
 }
