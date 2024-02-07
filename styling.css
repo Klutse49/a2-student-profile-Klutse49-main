@@ -9,7 +9,7 @@ body{
 h1, h2, h3, h4, h5, h6 {
 
     color: #003366;
-    text-align: center;
+    text-align: left;
 }
 
 h1 {
@@ -58,4 +58,37 @@ p,li {
     content: "✓";
     color: #ff7f50;
     margin-right: 5px;
+}
+
+.education-section table td, .education-section table th {
+    border: 1px solid #f2f2f2;
+}
+
+.academic-achievement {
+    background-color: #ff7f50;
+}
+
+.skills-section table tr:nth-child(even) {
+    background-color: #003366;
+}
+
+.skills-section table tr:nth-child(odd) {
+    background-color: white;
+}
+
+.input-field {
+    border: 2px solid #f2f2f2;
+    padding: 5px;
+}
+
+.submit-button {
+    background-color: #ff7f50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+
+}
+
+.submit-button:hover {
+    background-color: darken(#ff7f50, 10%);
 }
