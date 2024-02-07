@@ -92,3 +92,24 @@ p,li {
 .submit-button:hover {
     background-color: darken(#ff7f50, 10%);
 }
+
+
+.social-links a {
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+#x-social {
+    background-color: #0077B5; 
+}
+
+#linkedin-social {
+    background-color: #0077B5; 
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
