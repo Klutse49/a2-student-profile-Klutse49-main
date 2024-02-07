@@ -55,7 +55,7 @@ p,li {
 }
 
 .personal-info-section ul li::before {
-    content: "✓";
+    content: "\2713";
     color: #ff7f50;
     margin-right: 5px;
 }
