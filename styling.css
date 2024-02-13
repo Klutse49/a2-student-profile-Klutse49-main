@@ -117,21 +117,44 @@ footer {
     background-color: #003366;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 20px 0;
 }
 
-.social-links a {
-    padding: 10px;
-    margin: 5px;
-    display: inline-block;
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-nav ul li {
+    margin: 0 10px;
+}
+
+.footer-nav ul li a {
     color: white;
     text-decoration: none;
 }
 
-#linkedin-social i {
-    color: #0077B5; 
+.social-links{
+    margin-top: 20px;
 }
 
-.social-links a:hover {
+.social-links a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: white;
+}
+
+.social-links a:hover{
     opacity: 0.8;
 }
+
