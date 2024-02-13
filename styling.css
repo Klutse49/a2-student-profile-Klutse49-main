@@ -1,113 +1,105 @@
-body{
-    font-family: Arial,sans-serif;
-    width: 1024px;
+body {
+    font-family: Arial, sans-serif;
     margin: auto;
     background-color: #f2f2f2;
-
+    padding: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-
-    color: #003366;
-    text-align: left;
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-h1 {
-    font-size: 24px;
-    font-weight: bold;
-
+header h1 {
+    margin: 0;
 }
 
-h2 {
-    font-size: 20px;
-    
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
 }
 
-h3 {
-    font-size: 18px;
-    
-    
-}
- 
-p,li {
-
-    font-size: 14px;
+nav ul li {
+    margin-right: 20px;
 }
 
-.introduction-section h1{
-    font-size: 24px;
-    font-weight: bold;
-    color: #003366;
-
-}
-
-.introduction-section p {
-    font-style: italic;
-    font-size: 16px;
-
+nav ul li a {
+    color: white;
+    text-decoration: none;
 }
 
 .profile-picture {
-
     width: 150px;
     border: 3px solid #ff7f50;
-
+    display: block;
+    margin-top: 20px;
 }
 
-.personal-info-section ul li::before {
-    content: "\2713";
-    color: #ff7f50;
-    margin-right: 5px;
+h1, h2, h3, h4, h5, h6 {
+    color: #003366;
 }
 
-.education-section table td, .education-section table th {
-    border: 1px solid #f2f2f2;
+h1 { font-size: 24px; font-weight: bold; }
+h2 { font-size: 20px; }
+h3 { font-size: 18px; }
+p, li { font-size: 14px; }
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.academic-achievement {
-    background-color: #ff7f50;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.skills-section table tr:nth-child(even) {
-    background-color: #003366;
+th, td {
+    border: 1px solid #003366;
+    padding: 10px;
+    text-align: left;
 }
 
-.skills-section table tr:nth-child(odd) {
-    background-color: white;
-}
-
-.input-field {
-    border: 2px solid #f2f2f2;
-    padding: 5px;
-}
+tr:nth-child(even) {background-color: #f2f2f2;}
 
 .submit-button {
     background-color: #ff7f50;
     color: white;
     padding: 10px 20px;
     border: none;
-
+    cursor: pointer;
 }
 
 .submit-button:hover {
-    background-color: darken(#ff7f50, 10%);
+    background-color: #e56742;
 }
 
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
 
 .social-links a {
     padding: 10px;
     margin: 5px;
     display: inline-block;
-    text-decoration: none;
     color: white;
+    text-decoration: none;
 }
 
-#x-social {
-    background-color: #0077B5; 
-}
-
-#linkedin-social {
-    background-color: #0077B5; 
+#linkedin-social i {
+    color: #0077B5; 
 }
 
 .social-links a:hover {
