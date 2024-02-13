@@ -1,126 +1,94 @@
-<!--
-    Every file submitted in this course needs to be documented,
-    points will be designated towards documentation, don't loss
-    points for not documenting your work.  Provide general 
-    documentation about you, the course and assignment
-    
-    [Cyril Klutse]
-    [Rowan University]
-    Course: [CS 04305 1]
-    Assignment: [A3]
-    Due Date: [02/07/2024]
-    Instructor: [Marquise Pullen]
-
-    Description: [Styling css ]
-
-    Honor Pledge: I pledge that this work is entirely my own
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="styling.css"/>
-    <link rel="stylesheet" href="responsive.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cyril Klutse's Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="styling.css"/>
+    <link rel="stylesheet" type="text/css" href="responsive.css"/>
 </head>
 <body>
-   
+    <header>
+        <h1>Cyril Klutse</h1>
+        <nav>
+            <ul>
+                <li><a href="#personal-info">Personal Info</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section>
-        ><h1>Cyril Klutse</h1>
-           <p></p>
-     <img src="img/profile.png" alt="Profile Picture">
+    <main>
+        <section id="personal-info">
+            <h2>Personal Information</h2>
+            <img src="img/profile.png" alt="Profile Picture" class="profile-picture">
+            <p>Date of Birth: 11/04/1995</p>
+            <p>Hometown: Ghana, West Africa</p>
+            <h3>Hobbies and Interests</h3>
+            <ul>
+                <li>Playing Soccer</li>
+                <li>Watching Movies</li>
+                <li>Reading Books</li>
+            </ul>
+        </section>
 
-    </section>
+        <section id="education">
+            <h2>Educational Background</h2>
+            <ol>
+                <li>Bishop Herman College, Ghana, West Africa</li>
+                <li>Raritan Valley Community College, Raritan, NJ</li>
+                <li>Rowan University, Glassboro, NJ</li>
+            </ol>
+        </section>
 
-    <section>
-        <h2>Personal Information </h2>
-        <p>Date of Birth : 11/04/1995</p>
-        <p>Hometown: Ghana West Africa</p>
-
-        <h3> Hobbies and Interests</h3>
-        <ul>
-            <li>Playing Soccer</li>
-            <li>Watching Movies</li>
-            <li>Reading books</li>
-        </ul>
-
-        
-    </section>
-
-
-     <section>
-        <h2>Educational Background</h2>
-        <ol>
-            <li>Bishop Herman College, Ghana, West Africa</li>
-            <li>Raritan Valley Community College, Raritan, NJ</li>
-            <li>Rowan University , Glassboro, NJ</li>
-        </ol>
-    </section>
-
-      <section>
-        <h2>Skills and Experience</h2>
-        <table border = '1'>
-
-            <tr>
-                <th>Skill</th>
-                <th>Profiency Level</th>
-                <th>Expertise</th>
-            </tr>
-            <tr>
-                <td>Programming Language</td>
-                <td>Java, C++</td>
-                <td>Beginner</td>
+        <section id="skills">
+            <h2>Skills and Experience</h2>
+            <table>
+                <tr>
+                    <th>Skill</th>
+                    <th>Proficiency Level</th>
+                    <th>Expertise</th>
+                </tr>
+                <tr>
+                    <td>Programming Languages</td>
+                    <td>Java, C++</td>
+                    <td>Intermediate</td>
+                </tr>
                 <tr>
                     <td>Microsoft Office</td>
-                    <td>Excel,Word, Publish</td>
-                    <td>Beginner</td>
+                    <td>Excel, Word, Publisher</td>
+                    <td>Advanced</td>
                 </tr>
-                
-            </tr>
-        </table>
-      </section>
+            </table>
+        </section>
 
-      
-      <section>
-        <h2>Contact Me</h2>
-        
-        <div class="profile-section">
-            
+        <section id="contact">
+            <h2>Contact Me</h2>
             <form action="submit-to-some-server.php" method="post">
                 <input type="text" name="name" placeholder="Your Name" required><br>
                 <input type="email" name="email" placeholder="Your Email" required><br>
                 <textarea name="message" placeholder="Your Message"></textarea><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="submit-button">
             </form>
-        </div>
-            
-            </form>
-      </section>
+        </section>
+    </main>
 
-    <section>
+    <footer>
         <h2>Contact Information</h2>
         <p>Email: cyrilklutse@gmail.com</p>
         <p>Phone: +1(908)-963-3628</p>
-        <p>Social Media: 
-        
-            <div class="social-links">
-                <a href="https://twitter.com/cyrilklutse" class="twitter-follow-button" data-show-count="false">Follow @x</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    
-                </a>
-                <a href="https://www.linkedin.com/in/cyril-klutse-991b76113/" target="_blank" id="linkedin-social">
-                    <i class="fab fa-linkedin-in"></i> LinkedIn Profile
-                </a>
-            </div>
-            
-        </p>
-    </section>
+        <div class="social-links">
+            <a href="https://twitter.com/cyrilklutse" class="twitter-follow-button" data-show-count="false">Follow @cyrilklutse</a>
+            <a href="https://www.linkedin.com/in/cyril-klutse-991b76113/" target="_blank" id="linkedin-social">
+                <i class="fab fa-linkedin-in"></i> LinkedIn Profile
+            </a>
+        </div>
+    </footer>
 
+    
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
-
-
-
