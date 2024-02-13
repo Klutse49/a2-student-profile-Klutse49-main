@@ -51,10 +51,15 @@ h3 { font-size: 18px; }
 p, li { font-size: 14px; }
 
 section {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   padding: 20px;
+   margin-bottom: 20px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   background-color: #fff;
 }
 
 table {
