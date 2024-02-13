@@ -34,6 +34,31 @@ nav ul li a {
     text-decoration: none;
 }
 
+#hero {
+    position: relative;
+    background: url('img/happy-640w.jpg') no-repeat center center;
+    background-size: cover;
+    height: 50vh; 
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+#hero h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#hero p {
+    font-size: 1.5em;
+}
+
 .profile-picture {
     width: 150px;
     border: 3px solid #ff7f50;
