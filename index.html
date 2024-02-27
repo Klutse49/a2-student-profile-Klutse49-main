@@ -7,11 +7,11 @@
     [Cyril Klutse]
     [Rowan University]
     Course: [CS 04305 1]
-    Assignment: [A4]
-    Due Date: [02/13/2024]
+    Assignment: [A6]
+    Due Date: [02/28/2024]
     Instructor: [Marquise Pullen]
 
-    Description: [Responsive Styling ]
+    Description: [Stimulated Form Processing ]
 
     Honor Pledge: I pledge that this work is entirely my own
 -->
@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="styling.css"/>
     <link rel="stylesheet" type="text/css" href="responsive.css"/>
+    <script src="script.js"></script>
+
 </head>
 <body>
     <header>
@@ -95,13 +97,18 @@
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <form action="submit-to-some-server.php" method="post">
+            <form id="contactForm">
                 <input type="text" name="name" placeholder="Your Name" required><br>
+                <span class="error-message"></span><br> 
                 <input type="email" name="email" placeholder="Your Email" required><br>
-                <textarea name="message" placeholder="Your Message"></textarea><br>
+                <span class="error-message"></span><br> 
+                <textarea name="message" placeholder="Your Message" required></textarea><br>
+                <span class="error-message"></span><br> 
                 <input type="submit" value="Submit" class="submit-button">
             </form>
+            <div id="formResponse"></div> 
         </section>
+        
     </main>
 
     <footer>

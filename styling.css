@@ -158,3 +158,58 @@ footer {
     opacity: 0.8;
 }
 
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+input.error, select.error, textarea.error {
+    border-color: #e74c3c; 
+}
+
+.error-message {
+    color: #e74c3c; 
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.success-message {
+    color: #2ecc71; 
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.button-group {
+    text-align: right;
+}
+
+
+.submit-button {
+    background-color: #3498db; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer;
+    font-size: 16px; 
+}
+
+.submit-button:hover {
+    background-color: #2980b9; 
+}
