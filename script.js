@@ -1,61 +1,70 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('#contactForm');
+
     const responseOverlay = document.createElement('div');
-    responseOverlay.id = 'responseOverlay';
-    responseOverlay.style.display = 'none'; 
+    Object.assign(responseOverlay.style, {
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        display: 'none',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        color: '#FFF',
+        flexDirection: 'column',
+        textAlign: 'center',
+        zIndex: '1000',
+    });
     document.body.appendChild(responseOverlay);
 
     
     responseOverlay.addEventListener('click', function() {
-        this.style.display = 'none'; 
+        this.style.display = 'none';
+    });
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let validationPassed = true;
+        const formData = {
+            name: form.querySelector('input[name="name"]').value,
+            email: form.querySelector('input[name="email"]').value,
+            message: form.querySelector('textarea[name="message"]').value,
+        };
+
+        
+        form.querySelectorAll('.error-message').forEach(span => span.textContent = '');
+
+        
+        if (!formData.name || /\d/.test(formData.name)) {
+            document.getElementById('errorName').textContent = 'Please enter a valid name without numbers.';
+            validationPassed = false;
+        }
+
+        if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+            document.getElementById('errorEmail').textContent = 'Please enter a valid email address.';
+            validationPassed = false;
+        }
+
+        if (!formData.message) {
+            document.getElementById('errorMessage').textContent = 'Please enter your message.';
+            validationPassed = false;
+        }
+
+        
+        if (validationPassed) {
+            const thankYouMessage = `Thank you, ${formData.name}, for reaching out. We appreciate your message and will contact you at ${formData.email}.`;
+            responseOverlay.innerHTML = `<div><p>${thankYouMessage}</p><p>Click anywhere to close this message.</p></div>`;
+            responseOverlay.style.display = 'flex';
+            form.reset();
+        }
     });
 
     
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); 
-
-        const name = form.querySelector('input[name="name"]').value;
-        const email = form.querySelector('input[name="email"]').value;
-        const message = form.querySelector('textarea[name="message"]').value;
-        const errorMessages = form.querySelectorAll('.error-message');
-        let validationPassed = true;
-
-        
-        if (!name || !email || !message) {
-            alert('Please fill in all the fields.');
-            validationPassed = false;
-        }
-
-        
-        if (/\d/.test(name)) {
-            alert('Please enter a valid name without numbers.');
-            validationPassed = false;
-        }
-
-        
-        if (!message) {
-            const messageError = form.querySelector('textarea[name="message"]').nextElementSibling;
-            messageError.textContent = 'Please enter your message.';
-            validationPassed = false;
-        }
-
-        if (validationPassed) {
-            const thankYouMessage = `Thank you, ${name}, for reaching out. We appreciate your message and will contact you at ${email}.`;
-            responseOverlay.innerHTML = `<div class="overlay-content"><p>${thankYouMessage}</p><p>Click anywhere to close this message.</p></div>`;
-            responseOverlay.style.display = 'flex'; 
-
-            form.reset(); 
-        }
-    });
-
-   
     document.querySelector('input[name="name"]').addEventListener('input', function() {
-        const errorSpan = this.nextElementSibling; 
-        if (/\d/.test(this.value)) {
-            errorSpan.textContent = 'Names cannot contain numbers.';
-            errorSpan.style.display = 'inline';
-        } else {
-            errorSpan.style.display = 'none';
-        }
+        const errorSpan = this.nextElementSibling;
+        errorSpan.textContent = /\d/.test(this.value) ? 'Names cannot contain numbers.' : '';
     });
 });
