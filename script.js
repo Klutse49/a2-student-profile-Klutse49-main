@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('#contact-form');
+    const form = document.querySelector('#contactForm');
     const responseOverlay = document.createElement('div');
     responseOverlay.id = 'responseOverlay';
     responseOverlay.style.display = 'none'; 
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const name = form.querySelector('input[name="name"]').value;
         const email = form.querySelector('input[name="email"]').value;
         const message = form.querySelector('textarea[name="message"]').value;
+        const errorMessages = form.querySelectorAll('.error-message');
         let validationPassed = true;
 
         
@@ -32,6 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         
+        if (!message) {
+            const messageError = form.querySelector('textarea[name="message"]').nextElementSibling;
+            messageError.textContent = 'Please enter your message.';
+            validationPassed = false;
+        }
+
         if (validationPassed) {
             const thankYouMessage = `Thank you, ${name}, for reaching out. We appreciate your message and will contact you at ${email}.`;
             responseOverlay.innerHTML = `<div class="overlay-content"><p>${thankYouMessage}</p><p>Click anywhere to close this message.</p></div>`;
