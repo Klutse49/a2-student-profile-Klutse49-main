@@ -184,7 +184,6 @@ input.error, select.error, textarea.error {
     text-align: left;
 }
 
-
 .form-group {
     margin-bottom: 15px;
 }
@@ -198,7 +197,6 @@ label {
 .button-group {
     text-align: right;
 }
-
 
 .submit-button {
     background-color: #3498db; 
