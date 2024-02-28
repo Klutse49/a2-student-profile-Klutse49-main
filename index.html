@@ -96,18 +96,24 @@
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <form id="contactForm">
-                <input type="text" name="name" placeholder="Your Name" required><br>
-                <span class="error-message"></span><br> 
-                <input type="email" name="email" placeholder="Your Email" required><br>
-                <span class="error-message"></span><br> 
-                <textarea name="message" placeholder="Your Message" required></textarea><br>
-                <span class="error-message"></span><br> 
+            <form id="contactForm" novalidate>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
+                <span class="error-message" aria-live="polite"></span>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
+                <span class="error-message" aria-live="polite"></span>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" required aria-required="true"></textarea>
+                <span class="error-message" aria-live="polite"></span>
+
                 <input type="submit" value="Submit" class="submit-button">
             </form>
-            <div id="formResponse"></div> 
+            <div id="formResponse" class="hidden"></div>
         </section>
-        
+
     </main>
 
     <footer>

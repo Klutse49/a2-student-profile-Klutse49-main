@@ -102,15 +102,17 @@ th, td {
 tr:nth-child(even) {background-color: #f2f2f2;}
 
 .submit-button {
-    background-color: #ff7f50;
+    background-color: #3498db; /* Updated color */
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
 .submit-button:hover {
-    background-color: #e56742;
+    background-color: #2980b9;
 }
 
 footer {
@@ -168,6 +170,11 @@ input, select, textarea {
     margin-bottom: 16px;
 }
 
+input:focus, textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
 input.error, select.error, textarea.error {
     border-color: #e74c3c; 
 }
@@ -178,17 +185,27 @@ input.error, select.error, textarea.error {
     border-radius: 5px;
     padding: 10px;
     margin-top: 20px;
-    display: block; 
+    display: none; /* Initially hidden, make visible when there's an error */
 }
 
-.error-messages.active {
-    display: block; 
+.error-message {
+    color: #e74c3c; /* Red color for errors */
+    font-size: 14px;
+    margin-top: 5px;
+    display: block; /* Ensure it's always visible below the input */
 }
 
-.success-message {
-    color: #2ecc71; 
-    margin-bottom: 20px;
-    text-align: left;
+.success-message, #formResponse {
+    color: #2ecc71; /* Green color for success */
+    background-color: #ecf0f1; /* Light grey background */
+    border-left: 5px solid #27ae60; /* Green border on the left for emphasis */
+    padding: 10px;
+    margin-top: 20px;
+    display: none; /* Initially hidden */
+}
+
+#formResponse p {
+    margin: 0; /* Remove default paragraph margin */
 }
 
 .form-group {
@@ -199,22 +216,4 @@ label {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
-}
-
-.button-group {
-    text-align: right;
-}
-
-.submit-button {
-    background-color: #3498db; 
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px; 
-    cursor: pointer;
-    font-size: 16px; 
-}
-
-.submit-button:hover {
-    background-color: #2980b9; 
 }
