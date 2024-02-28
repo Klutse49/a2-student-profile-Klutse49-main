@@ -91,3 +91,58 @@ function displaySuccessMessage(message) {
     responseDiv.innerHTML = `<p>${message}</p>`;
     responseDiv.style.display = 'block'; 
 }
+
+function displayOverlayMessage(message, isError = false) {
+    
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.left = '0';
+    overlay.style.top = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.zIndex = '1000';
+
+    
+    const messageContainer = document.createElement('div');
+    messageContainer.style.padding = '20px';
+    messageContainer.style.borderRadius = '5px';
+    messageContainer.style.backgroundColor = '#fff';
+    messageContainer.style.textAlign = 'center';
+    messageContainer.style.maxWidth = '80%';
+    messageContainer.style.margin = '0 auto';
+    
+    messageContainer.style.backgroundColor = isError ? '#ffcccc' : '#ccffcc';
+
+
+    const messageText = document.createElement('p');
+    messageText.textContent = message;
+    messageText.style.color = isError ? '#990000' : '#006600';
+
+    
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.style.marginTop = '20px';
+    closeButton.onclick = function() {
+        document.body.removeChild(overlay);
+    };
+
+    
+    messageContainer.appendChild(messageText);
+    messageContainer.appendChild(closeButton);
+    overlay.appendChild(messageContainer);
+    document.body.appendChild(overlay);
+}
+
+function displaySuccessMessage(message) {
+    displayOverlayMessage(message);
+}
+
+function displayErrors(errors) {
+    
+    const combinedErrorMessage = errors.map(error => error.message).join('<br>');
+    displayOverlayMessage(combinedErrorMessage, true);
+}
