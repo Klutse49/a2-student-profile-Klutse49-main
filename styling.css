@@ -102,7 +102,7 @@ th, td {
 tr:nth-child(even) {background-color: #f2f2f2;}
 
 .submit-button {
-    background-color: #3498db; /* Updated color */
+    background-color: #3498db; 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -185,27 +185,27 @@ input.error, select.error, textarea.error {
     border-radius: 5px;
     padding: 10px;
     margin-top: 20px;
-    display: none; /* Initially hidden, make visible when there's an error */
+    display: none; 
 }
 
 .error-message {
-    color: #e74c3c; /* Red color for errors */
+    color: #e74c3c; 
     font-size: 14px;
     margin-top: 5px;
-    display: block; /* Ensure it's always visible below the input */
+    display: block; 
 }
 
 .success-message, #formResponse {
-    color: #2ecc71; /* Green color for success */
-    background-color: #ecf0f1; /* Light grey background */
-    border-left: 5px solid #27ae60; /* Green border on the left for emphasis */
+    color: #2ecc71; 
+    background-color: #ecf0f1; 
+    border-left: 5px solid #27ae60; 
     padding: 10px;
     margin-top: 20px;
-    display: none; /* Initially hidden */
+    display: none; 
 }
 
 #formResponse p {
-    margin: 0; /* Remove default paragraph margin */
+    margin: 0; 
 }
 
 .form-group {
