@@ -1,8 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('#contactForm');
-
+    const nameInput = form.querySelector('input[name="name"]');
+    const emailInput = form.querySelector('input[name="email"]');
+    const messageTextarea = form.querySelector('textarea[name="message"]');
     const responseOverlay = document.createElement('div');
-    Object.assign(responseOverlay.style, {
+
+    setupResponseOverlay(responseOverlay);
+    document.body.appendChild(responseOverlay);
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const errors = validateForm(nameInput, emailInput, messageTextarea);
+
+        if (errors.length > 0) {
+            displayErrors(errors);
+        } else {
+            displaySuccessMessage(nameInput.value, emailInput.value, responseOverlay);
+            form.reset();
+        }
+    });
+
+    setupRealTimeValidation(nameInput, emailInput, messageTextarea);
+});
+
+function setupResponseOverlay(overlay) {
+    Object.assign(overlay.style, {
         position: 'fixed',
         top: '0',
         left: '0',
@@ -17,54 +40,52 @@ document.addEventListener('DOMContentLoaded', function() {
         textAlign: 'center',
         zIndex: '1000',
     });
-    document.body.appendChild(responseOverlay);
-
-    
-    responseOverlay.addEventListener('click', function() {
+    overlay.addEventListener('click', function() {
         this.style.display = 'none';
     });
+}
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+function displaySuccessMessage(name, email, overlay) {
+    const thankYouMessage = `Thank you, ${name}, for reaching out. We appreciate your message and will contact you at ${email}.`;
+    overlay.innerHTML = `<div><p>${thankYouMessage}</p><p>Click anywhere to close this message.</p></div>`;
+    overlay.style.display = 'flex';
+}
 
-        let validationPassed = true;
-        const formData = {
-            name: form.querySelector('input[name="name"]').value,
-            email: form.querySelector('input[name="email"]').value,
-            message: form.querySelector('textarea[name="message"]').value,
-        };
+function validateForm(nameInput, emailInput, messageTextarea) {
+    let errors = [];
 
-        
-        form.querySelectorAll('.error-message').forEach(span => span.textContent = '');
+    if (!nameInput.value || /\d/.test(nameInput.value)) {
+        errors.push('Name cannot be empty or contain numbers.');
+    }
 
-        
-        if (!formData.name || /\d/.test(formData.name)) {
-            document.getElementById('errorName').textContent = 'Please enter a valid name without numbers.';
-            validationPassed = false;
-        }
+    if (!emailInput.value || !/\S+@\S+\.\S+/.test(emailInput.value)) {
+        errors.push('Please enter a valid email address.');
+    }
 
-        if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
-            document.getElementById('errorEmail').textContent = 'Please enter a valid email address.';
-            validationPassed = false;
-        }
+    if (!messageTextarea.value) {
+        errors.push('Message cannot be empty.');
+    }
 
-        if (!formData.message) {
-            document.getElementById('errorMessage').textContent = 'Please enter your message.';
-            validationPassed = false;
-        }
+    return errors;
+}
 
-        
-        if (validationPassed) {
-            const thankYouMessage = `Thank you, ${formData.name}, for reaching out. We appreciate your message and will contact you at ${formData.email}.`;
-            responseOverlay.innerHTML = `<div><p>${thankYouMessage}</p><p>Click anywhere to close this message.</p></div>`;
-            responseOverlay.style.display = 'flex';
-            form.reset();
-        }
-    });
-
+function displayErrors(errors) {
     
-    document.querySelector('input[name="name"]').addEventListener('input', function() {
-        const errorSpan = this.nextElementSibling;
-        errorSpan.textContent = /\d/.test(this.value) ? 'Names cannot contain numbers.' : '';
+    const errorDiv = document.getElementById('formErrors');
+    errorDiv.innerHTML = errors.map(error => `<p>${error}</p>`).join('');
+    errorDiv.style.display = 'block';
+}
+
+function setupRealTimeValidation(nameInput, emailInput, messageTextarea) {
+    nameInput.addEventListener('input', function() {
+        this.nextElementSibling.textContent = /\d/.test(this.value) ? 'Names cannot contain numbers.' : '';
     });
-});
+
+    emailInput.addEventListener('input', function() {
+        this.nextElementSibling.textContent = !/\S+@\S+\.\S+/.test(this.value) && this.value ? 'Invalid email format.' : '';
+    });
+
+    messageTextarea.addEventListener('input', function() {
+        this.nextElementSibling.textContent = !this.value ? 'Message cannot be empty.' : '';
+    });
+}
