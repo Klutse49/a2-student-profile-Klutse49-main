@@ -178,7 +178,7 @@ input.error, select.error, textarea.error {
     border-radius: 5px;
     padding: 10px;
     margin-top: 20px;
-    display: none; 
+    display: block; 
 }
 
 .error-messages.active {
